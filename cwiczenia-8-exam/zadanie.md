@@ -44,8 +44,10 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
  
  ## 2. echo 1 > /proc/sys/net/ipv4/ip_forward - ustawiamy przekazywanie adresów ( ip forwarding )<br><br>
  
- ## 3. ip route add default via adres interfejsu - ustawiamy domyślną brame dla hostów
+ ## 3. pico /etc/resolv.conf - ustawienie domyślnego DNS'a ( 8.8.8.8 )
+ 
+ ## 4. ip route add default via adres_interfejsu - ustawiamy domyślną bramę dla hostów
  ###### PC1 - 172.22.160.1/23
  ###### PC2 - 172.22.128.1/19
  
- ## 4. iptables -t nat -A POSTROUTING -o nazwa_interfejsu -j MASQUERADE - pozwoli na udostępnienie internetu PC1 i PC2
+ ## 5. iptables -t nat -A POSTROUTING -o nazwa_interfejsu -j MASQUERADE - pozwoli na udostępnienie internetu PC1 i PC2
