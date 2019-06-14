@@ -33,5 +33,19 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
  
 ## PC2:
  
- eth0: 172.22.128.3<br>
+ eth0: 172.22.128.3<br><br>
  
+ # Sposób działania:
+ 
+ ## 1. ip addr add xxx.xxx.xxx.xxx/xx dev xxxxxx - ustawiamy adresy <br> 
+ ###### PC0 - 172.22.160.1/23 i 172.22.128.1/19 <br> 
+ ###### PC1 - 172.22.160.2/23<br> 
+ ###### PC2 - 172.22.128.2/19<br><br>
+ 
+ ## 2. echo 1 > /proc/sys/net/ipv4/ip_forward - ustawiamy przekazywanie adresów ( ip forwarding )<br><br>
+ 
+ ## 3. ip route add default via adres interfejsu - ustawiamy domyślną brame dla hostów
+ ###### PC1 - 172.22.160.1/23
+ ###### PC2 - 172.22.128.1/19
+ 
+ ## 4. iptables -t nat -A POSTROUTING -o nazwa_interfejsu -j MASQUERADE - pozwoli na udostępnienie internetu PC1 i PC2
