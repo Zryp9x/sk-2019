@@ -40,9 +40,9 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
  ## 1. ip addr add xxx.xxx.xxx.xxx/xx dev xxxxxx - ustawiamy adresy <br> 
  ###### PC0 - 172.22.160.1/23 i 172.22.128.1/19 <br> 
  ###### PC1 - 172.22.160.2/23<br> 
- ###### PC2 - 172.22.128.2/19<br><br>
+ ###### PC2 - 172.22.128.2/19<br>
  
- ## 2. echo 1 > /proc/sys/net/ipv4/ip_forward - ustawiamy przekazywanie adresów ( ip forwarding )<br><br>
+ ## 2. echo 1 > /proc/sys/net/ipv4/ip_forward - ustawiamy przekazywanie adresów ( ip forwarding )
  
  ## 3. pico /etc/resolv.conf - ustawienie domyślnego DNS'a ( 8.8.8.8 )
  
