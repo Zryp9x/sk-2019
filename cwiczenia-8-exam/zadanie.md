@@ -11,27 +11,27 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
    * Przygotuj dokumentację powyższej architektury w formie graficznej w programie ``DIA``
  
  
- LAN1:
+ ## LAN1:
  
- Maska: 255.255.254.0 /23
+ Maska: 255.255.254.0 /23 <br>
  Adres podsieci: 172.22.160.0
  
- LAN2:
+ ## LAN2:
 
- Maska: 255.255.224.0 /19
+ Maska: 255.255.224.0 /19<br>
  Adres podsieci: 172.22.128.0
  
- PC0:
+## PC0:
  
- eth0: Połączenie z internetem
- eth1: 172.22.128.1
+ eth0: Połączenie z internetem<br>
+ eth1: 172.22.128.1<br>
  eth2: 172.22.160.1
  
- PC1:
+ ## PC1:
 
- eth0: 172.22.160.2
+ eth0: 172.22.160.2<br>
  
- PC2:
+## PC2:
  
- eth0: 172.22.128.3
+ eth0: 172.22.128.3<br>
  
