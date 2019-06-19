@@ -23,17 +23,17 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
  
 ## PC0:
  
- eth0: Połączenie z internetem<br>
- eth1: 172.22.128.1<br>
- eth2: 172.22.160.1
+ eth0s3: Połączenie z internetem<br>
+ eth0s8: 172.22.128.1/19<br>
+ eth0s9: 172.22.160.1/23<br>
  
  ## PC1:
 
- eth0: 172.22.160.2<br>
+ eth0s3: 172.22.160.2/23<br>
  
 ## PC2:
  
- eth0: 172.22.128.3<br><br>
+ eth0s3: 172.22.128.3/19<br>
  
  # Sposób działania:
  
