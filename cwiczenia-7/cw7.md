@@ -1,24 +1,6 @@
-NAT - Network address translation
-----------------------------------
-
-  * https://linux.die.net/man/8/iptables
 
 Zadanie
 ------------
-
-![zadanie 7](nat-1.svg)
-
-1.
-   * Przygotuj konfigurację sieci zgodnie z powyższym diagramem
-   * Zweryfikuj poprawność połączenia z siecią internet dla ``PC0``
-      * adresacja
-   * W pierwszej kolejności przygotuj ``PC0``, ``PC-1``
-   * Uruchom usługe ``ip_forward`` dla ``PC0``
-   * Do konfiguracji wykorzystaj właściwą konfigurację ``VirtualBox`` która pozwoli na dostęp do internetu dla ``PC-1`` za pomocą interfejsu ``eth0``
-   * Wykonaj konfigurację translacji adresów tak aby udostępnic komunikację z siecią internet dla ``PC-2``
-   * Przygotuj dokumentację powyższego procesu
-   *  **czy istnieje różnica keżeli adres eth0 statyczny/dynamiczny? Jeżeli to jaka?**
-
 
 ![zadanie 7](nat-2.svg)
 
@@ -31,13 +13,29 @@ Zadanie
     * Rozpocznij od zapoznania się z dokumentacją oraz instalacji programu ``isc-dhcp-server`` dla ``PC1``
 
  
+ ## Tworzymy 2 sieci NAT
+192.168.64.192/27
+172.16.95.216/29
+## W PC1 ustawiamy:
 
-Zadanie do domu
----------------
+enp0s8 - 192.168.64.193/27
+enp0s3 - NAT
+enp0s9 - 172.16.95.217/29
 
-1. Wykorzystując program ``dia`` oraz ikony CISCO
-  * Przygotuj diagram powyższej sieci uwzględniając urządzenia tj:
-    * ROUTER
-    * SWITCH
-    * PC
-  
+## W PC2 ustawiamy:
+enp0s3 - 192.168.64.194/27
+
+## W PC3 ustawiamy:
+enp0s3 - 172.16.95.218/29
+
+## na PC1 ustawiamy forwarding i udostepniamy internet:
+echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
+
+## na PC2 ustwiamy routing:
+
+ip route add default via 192.168.64.193 dev enp0s3
+
+## na PC3 ustwiamy routing:
+
+ip route add default via 172.16.95.217 dev enp0s3
