@@ -51,3 +51,10 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
  ###### PC2 - 172.22.128.1/19
  
  ## 5. iptables -t nat -A POSTROUTING -o nazwa_interfejsu -j MASQUERADE - pozwoli na udostępnienie internetu PC1 i PC2
+ 
+ ## Dostęp do internetu z PC1:
+ ![PC1](pc1.PNG)<br>
+ 
+  ## Dostęp do internetu z PC2:
+ 
+ ![PC2](pc2.PNG)
