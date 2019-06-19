@@ -57,4 +57,4 @@ Zaproponuj rozwiązanie spełniające poniższe wymagania:
  
   ## Dostęp do internetu z PC2:
  
- ![PC2](pc2.PNG)
+ ![PC2](p2.PNG)
